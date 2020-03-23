@@ -1,5 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   devtool: "eval",
@@ -10,7 +11,7 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/static/"
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [new webpack.HotModuleReplacementPlugin(), new HtmlWebpackPlugin()],
   resolve: {
     extensions: [".js", ".jsx"]
   },
